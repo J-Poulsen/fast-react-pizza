@@ -1,14 +1,14 @@
-// Test ID: IIDSAT
-
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from '../../utils/helpers';
 
+// Test ID: IIDSAT
+
 const order = {
   id: 'ABCDEF',
-  customer: 'Jonas',
+  customer: 'Jens',
   phone: '123456789',
   address: 'Arroios, Lisbon , Portugal',
   priority: true,
