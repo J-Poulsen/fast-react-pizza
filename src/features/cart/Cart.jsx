@@ -10,9 +10,7 @@ function Cart() {
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
 
-  if (!cart.length) {
-    return <EmptyCart />;
-  }
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className='px-4 py-3'>
