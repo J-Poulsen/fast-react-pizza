@@ -5,6 +5,5 @@
   "tabWidth": 2,
   "printWidth": 80,
   "trailingComma": "all",
-  "jsxSingleQuote": true,
-  "experimentalTernaries": true
+  "jsxSingleQuote": true
 }
