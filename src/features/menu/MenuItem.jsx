@@ -5,22 +5,22 @@ import { formatCurrency } from '../../utils/helpers';
 import { addItem, getCurrentQtyById } from '../cart/cartSlice';
 import UpdateItemQuantity from '../cart/UpdateItemQuantity';
 
-function MenuItem({ item }) {
+function MenuItem({ pizza }) {
   const dispatch = useDispatch();
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = item;
+  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
   const currentQuantity = useSelector(getCurrentQtyById(id));
   const isInCart = currentQuantity > 0;
 
   function handleAddToCart() {
-    const newItem = {
-      itemId: id,
+    const newPizza = {
+      pizzaId: id,
       name,
       unitPrice,
       quantity: 1,
       totalPrice: unitPrice * 1,
     };
 
-    dispatch(addItem(newItem));
+    dispatch(addItem(newPizza));
   }
 
   return (
@@ -46,10 +46,10 @@ function MenuItem({ item }) {
           {isInCart && (
             <div className='flex items-center gap-3 sm:gap-8'>
               <UpdateItemQuantity
-                itemId={id}
+                pizzaId={id}
                 currentQuantity={currentQuantity}
               />
-              <DeleteItem itemId={id} />
+              <DeleteItem pizzaId={id} />
             </div>
           )}
 
